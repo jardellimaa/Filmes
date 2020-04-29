@@ -21,12 +21,7 @@ class FilmeDAO {
     }
 
     fun consultarSeEstaNaLista(filme: Filme) : Boolean {
-        for( filmeNaLista : Filme in filmesListaDao ){
-            if(filme == filmeNaLista){
-                return true
-            }
-        }
-        return false
+        return filme in filmesListaDao
     }
 
     fun removerFilme(filme: Filme){
