@@ -15,9 +15,9 @@ class FilmeDAO {
     fun retornarFilmes() : MutableList<Filme>{
         return filmesListaDao
     }
-
-    fun listaEstaVazia() : Boolean{
-        return filmesListaDao.size < 1
+    
+    fun retornarFilme(filme : Filme) : Filme {
+        return filmesListaDao.find( { it == filme } ) ?: Filme()
     }
 
     fun consultarSeEstaNaLista(filme: Filme) : Boolean {
