@@ -12,8 +12,13 @@ class FilmeDAO {
         filmesListaDao.add(filme)
     }
 
-    fun retornarFilmes() : MutableList<Filme>{
+    fun retornarFilmes() : List<Filme>{
         return filmesListaDao
+    }
+    
+    fun filtrarPorTitulo(string : String) : List<Filme>{
+        return filmesListaDao.filter({ it.titulo.toLowerCase()
+                .contains(string.toLowerCase()) })
     }
     
     fun retornarFilme(filme : Filme) : Filme {
